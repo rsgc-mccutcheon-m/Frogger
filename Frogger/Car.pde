@@ -2,16 +2,17 @@ class Car {
 
   int speed = 6;
   int X=-30;
+  int Lane;
 
-Car() {
-  float w = width;
- X = int(random(w)); 
- speed = int(random(2,7));
-}
+  Car() {
+    float w = width;
+    X = int(random(w)); 
+    speed = int(random(2, 7));
+  }
   //road width is 330
   //lane width with 6 cars is 55
-  void cdraw(int Lane, int Start) {
-
+  void cdraw(int Lane2, int Start) {
+    Lane=Lane2;
     if (X<= 680) {
       X= X+speed;
       if (X>=680) {
