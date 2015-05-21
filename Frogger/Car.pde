@@ -19,5 +19,6 @@ class Car {
       }
     }
     image(caddy, X, Lane);
+    ellipse(X,Lane, 4,4);
   }
 }

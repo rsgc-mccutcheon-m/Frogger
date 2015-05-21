@@ -71,6 +71,9 @@ void draw() {
   e.cdraw(326, -5);
   f.cdraw(381, -2);
    player.hitChek();
+   fill(255,0,0);
+   rect(pX,pY, player.frogWd, player.frogHt);
+
 }
 
 //Move player
