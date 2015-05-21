@@ -25,6 +25,9 @@ int highscore;
 //create strings for title screen text
 String title="Welcome to FROGGER!";
 String info ="Cross the road, but DONT get hit!";
+//declare hitbox adjustment variables
+int frogWd = 30;
+int frogHt = 32;
 
 void setup() {
   size(600, 500);
@@ -72,7 +75,7 @@ void draw() {
   f.cdraw(381, -2);
    player.hitChek();
    fill(255,0,0);
-   rect(pX,pY, player.frogWd, player.frogHt);
+   rect(pX,pY, frogWd, frogHt);
 
 }
 
