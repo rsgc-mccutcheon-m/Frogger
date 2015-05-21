@@ -1,6 +1,6 @@
 class Car {
 
-
+  int speed;
   int X=-30;
   int Lane;
   int shiftX=52;
@@ -8,7 +8,7 @@ class Car {
 
   Car() {
     X = int(random(width)); 
-    speed = int(random(2, 7));
+    speed = (int(random(2, 7)))+speedshift;
   }
   //road width is 330
   //lane width with 6 cars is 55
@@ -28,6 +28,7 @@ class Car {
       //do this 
       println("squish");
       pY=420;
+        lives=lives-1;
     }
   }
 }

@@ -14,6 +14,8 @@ Frog player;
 // create image variables
 PImage caddy;
 PImage frog;
+PImage lose;
+PImage rage;
 //create playerXY and Speed variables
 int pX=300;
 int pY=417;
@@ -30,7 +32,10 @@ String info ="Cross the road, but DONT get hit!";
 int frogWd = 30;
 int frogHt = 32;
 //create car related variables
-  int speed;
+int speedshift=0;
+//run lose menu
+boolean runAgain= false;
+boolean runRage =false;
 
 void setup() {
   size(600, 500);
@@ -52,6 +57,7 @@ void setup() {
   //loadImages
   caddy=loadImage("caddy.png");
   frog= loadImage("frog.png");
+  lose= loadImage("frogd.png");
 } 
 
 void draw() {
@@ -80,8 +86,41 @@ void draw() {
   player.hitChek();
   //fill(255,0,0);
   //rect(pX,pY, frogWd, frogHt);
+  if (lives == 0) {
+    background(255, 0, 0);
+    rect(150, 226, 100, 50);
+    rect(350, 226, 100, 50);
+    fill(#37BC60);
+    text("Play Again", 160, 255);
+    fill(#212114);
+    text("Rage", 377, 257);
+    image(lose, 274, 180);
+  }
+  if (runRage== true) {
+    background(int(random(0,255)),int(random(0,100)),int(random(0,170))); 
+    image(lose, 218,189);
+    image(lose, 365,192);
+    image(lose, 286,240);
+    image(lose, 365,299);
+    image(lose, 226,310);
+}
 }
 
+//Check which lose menu option to run
+void mouseReleased() {
+  if (mouseX>= 150 && mouseX <= 200 && mouseY>=226 && mouseY <= 276) {
+    runAgain=true;
+    println("Play Again");
+  } else {
+    runAgain=false;
+  }
+
+  if (mouseX>=350 && mouseX<= 450 && mouseY >=226 && mouseY <= 276) {
+    runRage=true;
+  } else {
+    runRage= false;
+  }
+}
 //Move player
 void keyPressed() { 
   if (keyPressed) {
@@ -101,3 +140,4 @@ void keyPressed() {
     pX=pX+PS;
   }
 }
+

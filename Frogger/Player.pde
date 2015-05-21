@@ -5,8 +5,10 @@ class Frog {
     image(frog, pX, pY);
     if (pY<= 30) {
       pY= 410;
-      score= score+1;
-      speed= speed+1;  
+      score+=1;
+      speedshift+=1;
+      println(speedshift);
+    
   }
     
   }
