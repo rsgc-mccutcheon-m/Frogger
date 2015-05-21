@@ -21,6 +21,7 @@ int PS = 8;
 //setup score variables
 int score;
 int highscore;
+int lives = 3;
 //setup 
 //create strings for title screen text
 String title="Welcome to FROGGER!";
@@ -28,6 +29,8 @@ String info ="Cross the road, but DONT get hit!";
 //declare hitbox adjustment variables
 int frogWd = 30;
 int frogHt = 32;
+//create car related variables
+  int speed;
 
 void setup() {
   size(600, 500);
@@ -45,7 +48,7 @@ void setup() {
   fill(#14E02D);
   rect(-1, -10, 602, 95, 20);
   rect(-1, 415, 602, 95, 20);
- 
+
   //loadImages
   caddy=loadImage("caddy.png");
   frog= loadImage("frog.png");
@@ -53,18 +56,19 @@ void setup() {
 
 void draw() {
   //ReDraw background
-  
+
   background(#1A2C31);
   noStroke();
   fill(#14E02D);
   textSize(40);
-   text(title,90, 212);
-   textSize(16);
+  text(title, 90, 212);
+  textSize(16);
   text(info, 175, 260);
   rect(-1, -10, 602, 95, 20);
   rect(-1, 415, 602, 95, 20);
   fill(#692C93);
   text("Score"+score, 400, 20);
+  text("Lives"+lives, 30, 20);
   //animate players and cars
   player.playerq();
   a.cdraw(106, -20);
@@ -73,17 +77,17 @@ void draw() {
   d.cdraw(271, -25);
   e.cdraw(326, -5);
   f.cdraw(381, -2);
-   player.hitChek();
-   fill(255,0,0);
-   rect(pX,pY, frogWd, frogHt);
-
+  player.hitChek();
+  //fill(255,0,0);
+  //rect(pX,pY, frogWd, frogHt);
 }
 
 //Move player
 void keyPressed() { 
-  if(keyPressed) {
+  if (keyPressed) {
     title= " ";
-    info=" ";}
+    info=" ";
+  }
   if (keyCode==UP) {
     pY= pY-PS;
   }
