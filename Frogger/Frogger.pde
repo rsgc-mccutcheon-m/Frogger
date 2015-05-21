@@ -17,8 +17,8 @@ PImage frog;
 PImage lose;
 PImage rage;
 //create playerXY and Speed variables
-int pX=300;
-int pY=417;
+int pX=290;
+int pY=430;
 int PS = 8;
 //setup score variables
 int score;
@@ -62,8 +62,9 @@ void setup() {
 
 void draw() {
   //ReDraw background
-
+  if (lives>0) {
   background(#1A2C31);
+  blendMode(BLEND);
   noStroke();
   fill(#14E02D);
   textSize(40);
@@ -86,8 +87,10 @@ void draw() {
   //fill(255,0,0);
   //rect(pX,pY, frogWd, frogHt);
   //check if the player has lost
+  }
   if (lives == 0) {
     background(255, 0, 0);
+    fill(#6727A7);
     rect(150, 226, 100, 50);
     rect(350, 226, 100, 50);
     fill(#37BC60);
@@ -107,7 +110,10 @@ void draw() {
   }
   //check to see if Play Again has been run
   if (runAgain==true) {
-   
+   lives=3;
+   pY= 430;
+   score=0;
+   runAgain = false;
   }
 }
 

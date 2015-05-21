@@ -27,8 +27,8 @@ class Car {
     if ((pX +frogWd)>=X+shiftX && pX <= X+shiftX && (pY +frogHt)>= Lane+shiftY && pY <= Lane+shiftY) {
       //do this 
       println("squish");
-      pY=420;
-        lives=lives-1;
+      pY=430;
+        lives-=1;
     }
   }
 }
