@@ -23,6 +23,7 @@ int PS = 8;
 //setup score variables
 int score;
 int highscore;
+String hScore =" ";
 int lives = 3;
 //setup 
 //create strings for title screen text
@@ -63,30 +64,33 @@ void setup() {
 void draw() {
   //ReDraw background
   if (lives>0) {
-  background(#1A2C31);
-  blendMode(BLEND);
-  noStroke();
-  fill(#14E02D);
-  textSize(40);
-  text(title, 90, 212);
-  textSize(16);
-  text(info, 175, 260);
-  rect(-1, -10, 602, 95, 20);
-  rect(-1, 415, 602, 95, 20);
-  fill(#692C93);
-  text("Score"+score, 400, 20);
-  text("Lives"+lives, 30, 20);
-  //animate players and cars
-  player.playerq();
-  a.cdraw(106, -20);
-  b.cdraw(161, -80);
-  c.cdraw(216, -100);
-  d.cdraw(271, -25);
-  e.cdraw(326, -5);
-  f.cdraw(381, -2);
-  //fill(255,0,0);
-  //rect(pX,pY, frogWd, frogHt);
-  //check if the player has lost
+    background(#1A2C31);
+    blendMode(BLEND);
+    noStroke();
+    fill(#14E02D);
+    textSize(40);
+    text(title, 90, 212);
+    text(hScore, 140, 200);
+    textSize(16);
+    text(info, 175, 260);
+    rect(-1, -10, 602, 95, 20);
+    rect(-1, 415, 602, 95, 20);
+    fill(#692C93);
+    text("Score: "+score, 400, 20);
+    text("Highscore: "+highscore, 300, 20);
+    text("Lives: "+lives, 30, 20);
+    
+    //animate players and cars
+    player.playerq();
+    a.cdraw(106, -20);
+    b.cdraw(161, -80);
+    c.cdraw(216, -100);
+    d.cdraw(271, -25);
+    e.cdraw(326, -5);
+    f.cdraw(381, -2);
+    //fill(255,0,0);
+    //rect(pX,pY, frogWd, frogHt);
+    //check if the player has lost
   }
   if (lives == 0) {
     background(255, 0, 0);
@@ -110,10 +114,17 @@ void draw() {
   }
   //check to see if Play Again has been run
   if (runAgain==true) {
-   lives=3;
-   pY= 430;
-   score=0;
-   runAgain = false;
+    lives=3;
+    pY= 430;
+    score=0;
+    runAgain = false;
+  }
+  //update highscore
+  if (score> highscore) {
+    highscore= score;
+    println("NEW HIGHSCORE! "+highscore);
+    hScore= "NEW HIGHSCORE!"; 
+
   }
 }
 
@@ -150,4 +161,8 @@ void keyPressed() {
   if (keyCode==RIGHT) {
     pX=pX+PS;
   }
+  if (hScore ! " ") {
+    hScore = " ";
+  }
+  
 }
