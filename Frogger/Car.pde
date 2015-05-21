@@ -5,8 +5,7 @@ class Car {
   int Lane;
 
   Car() {
-    float w = width;
-    X = int(random(w)); 
+    X = int(random(width)); 
     speed = int(random(2, 7));
   }
   //road width is 330
