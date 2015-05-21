@@ -13,7 +13,4 @@ class Frog {
     
   }
 
-  void hitChek() {
-    //check if a hit has occured
-  }
 }

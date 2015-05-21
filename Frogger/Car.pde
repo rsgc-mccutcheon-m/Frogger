@@ -8,7 +8,7 @@ class Car {
 
   Car() {
     X = int(random(width)); 
-    speed = (int(random(2, 7)))+speedshift;
+    speed = (int(random(2, 7)));
   }
   //road width is 330
   //lane width with 6 cars is 55
@@ -16,7 +16,7 @@ class Car {
     
     Lane=Lane2;
     if (X<= 680) {
-      X= X+speed;
+      X= X+speed+speedshift;
       if (X>=680) {
         X=-100;
       }

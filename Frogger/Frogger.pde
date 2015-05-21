@@ -83,9 +83,9 @@ void draw() {
   d.cdraw(271, -25);
   e.cdraw(326, -5);
   f.cdraw(381, -2);
-  player.hitChek();
   //fill(255,0,0);
   //rect(pX,pY, frogWd, frogHt);
+  //check if the player has lost
   if (lives == 0) {
     background(255, 0, 0);
     rect(150, 226, 100, 50);
@@ -96,14 +96,19 @@ void draw() {
     text("Rage", 377, 257);
     image(lose, 274, 180);
   }
+  //check to see if rage is to be run
   if (runRage== true) {
-    background(int(random(0,255)),int(random(0,100)),int(random(0,170))); 
-    image(lose, 218,189);
-    image(lose, 365,192);
-    image(lose, 286,240);
-    image(lose, 365,299);
-    image(lose, 226,310);
-}
+    background(int(random(0, 255)), int(random(0, 100)), int(random(0, 170))); 
+    image(lose, 218, 189);
+    image(lose, 365, 192);
+    image(lose, 286, 240);
+    image(lose, 365, 299);
+    image(lose, 226, 310);
+  }
+  //check to see if Play Again has been run
+  if (runAgain==true) {
+   
+  }
 }
 
 //Check which lose menu option to run
@@ -140,4 +145,3 @@ void keyPressed() {
     pX=pX+PS;
   }
 }
-
