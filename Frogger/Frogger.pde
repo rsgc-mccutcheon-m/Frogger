@@ -59,15 +59,15 @@ void setup() {
   caddy=loadImage("caddy.png");
   frog= loadImage("frog.png");
   lose= loadImage("frogd.png");
+  rage= loadImage("rage.png");
 } 
 
 void draw() {
   //ReDraw background
   if (lives>0) {
-    background(#1A2C31);
-    blendMode(BLEND);
+    background(#011115);
     noStroke();
-    fill(#14E02D);
+    fill(#00b215);
     textSize(40);
     text(title, 90, 212);
     text(hScore, 140, 200);
@@ -108,11 +108,11 @@ void draw() {
   //check to see if rage is to be run
   if (runRage== true) {
     background(int(random(0, 255)), int(random(0, 100)), int(random(0, 170))); 
-    image(lose, 218, 189);
-    image(lose, 365, 192);
-    image(lose, 286, 240);
-    image(lose, 365, 299);
-    image(lose, 226, 310);
+    image(rage, 100, 50);
+    // image(lose, 365, 192);
+    // image(lose, 286, 240);
+    // image(lose, 365, 299);
+    // image(lose, 226, 310);
   }
   //check to see if Play Again has been run
   if (runAgain==true) {
