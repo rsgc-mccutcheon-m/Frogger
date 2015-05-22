@@ -161,7 +161,7 @@ void keyPressed() {
   if (keyCode==RIGHT) {
     pX=pX+PS;
   }
-  if (hScore ! " ") {
+  if (hScore != " ") {
     hScore = " ";
   }
   
