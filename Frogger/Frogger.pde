@@ -101,6 +101,8 @@ void draw() {
     text("Play Again", 160, 255);
     fill(#212114);
     text("Rage", 377, 257);
+    text("Your Score: "+score,244,128);
+    text("Highscore: "+highscore, 248, 150);
     image(lose, 274, 180);
   }
   //check to see if rage is to be run
